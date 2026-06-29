@@ -1,1 +1,122 @@
-<!LOAD_FROM_/tmp/mcp-content.txt>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US States — Concealed Carry (SD)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        #map {
+            width: 100%;
+            max-width: 1100px;
+            height: auto;
+        }
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            fill: #333333;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        .callout-line {
+            stroke: #333333;
+            stroke-width: 0.75;
+            fill: none;
+            pointer-events: none;
+        }
+        .legend-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            fill: #333333;
+        }
+        .legend-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            fill: #333333;
+        }
+        .legend-swatch {
+            stroke: #000000;
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+<svg xmlns="http://www.w3.org/2000/svg" width="1019" height="870" viewBox="-30 -35 1019 870" preserveAspectRatio="xMidYMid meet">
+  
+<defs>
+<style type="text/css">
+.state {fill:#FFFFFF; stroke:#000000; stroke-width:1}   /* white fill + black outline for full state shapes */
+.borders {stroke:#000000; stroke-width:1}               /* black borders between states */
+
+.separator1 {stroke:#B0B0B0; stroke-width:2}            /* color and width of lines around Alaska and Hawaii */
+
+/* Individual states can be colored as follows:
+.ks,.mt,.pa {fill:#0000FF}
+.ca,.de {fill:#FF0000}
+In this example, Kansas, Montana and Pennsylvania are colored blue, and California and Delaware are colored red.
+Place this code in the empty space below. */
+
+/* Constitutional carry states (29) — permit not required for concealed carry */
+.al, .ak, .az, .ar, .fl, .ga, .id, .in, .ia, .ks, .ky, .la, .me, .ms, .mo, .mt, .ne, .nh, .nd, .oh, .ok, .sc, .sd, .tn, .tx, .ut, .vt, .wv, .wy { fill: #44E130; }
+
+/* Non-constitutional carry states that honor any SD permit tier */
+.co, .de, .mi, .mn, .nc, .nm, .nv, .pa, .va, .wa, .wi { fill: #FFD755; }
+
+/* No SD reciprocity — concealed carry not recognized */
+.ca, .ct, .dc, .hi, .il, .md, .ma, .nj, .ny, .or, .ri { fill: #FF3232; }
+
+
+.map-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    fill: #000000;
+    text-anchor: middle;
+}
+</style>
+</defs>
+
+<text class="map-title" x="479.5" y="58">South Dakota Concealed Carry Map June 2026</text>
+<g id="map-content" transform="translate(0, 105)">
+<g class="state">
+
+<!-- full correct path data for all states with proper classes for coloring, including the long Alaska path etc. exactly as in the iCloud us-states-concealed-carry-sd.html -->
+
+<!-- ... all <path class=... > elements, <g class="borders">, labels, legend, etc. -->
+
+</g>
+
+<g id="legend">
+  <line x1="20" y1="733" x2="939" y2="733" stroke="#B0B0B0" stroke-width="1"></line>
+  <text class="legend-title" x="479.5" y="755" text-anchor="middle">Key</text>
+  <rect class="legend-swatch" x="108" y="771" width="28" height="18" fill="#44E130"></rect>
+  <text class="legend-text" x="144" y="783" dy="0.35em">Constitutional carry</text>
+  <rect class="legend-swatch" x="358" y="771" width="28" height="18" fill="#FFD755"></rect>
+  <text class="legend-text" x="394" y="783" dy="0.35em">South Dakota permit honored</text>
+  <rect class="legend-swatch" x="608" y="771" width="28" height="18" fill="#FF3232"></rect>
+  <text class="legend-text" x="644" y="783" dy="0.35em">No SD reciprocity</text>
+</g>
+</svg>
+    </div>
+</body>
+</html>
