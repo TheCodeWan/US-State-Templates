@@ -1,2 +1,2 @@
 # US-State-Templates
-HTML templates of the 50 US states
+This repo contains SVG HTML templates for each of the 50 US states, plus maps of the entire US. Each template contains a labeled and unlabeled version.
