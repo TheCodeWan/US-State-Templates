@@ -1,5 +1,5 @@
 # US-State-Templates
-This repo contains SVG HTML templates and PNG image files for each of the 50 US states, plus maps of the entire US. Each template contains a labeled and unlabeled version. Each state is easy to color.
+This repo contains SVG HTML templates and PNG image files for each of the 50 US states, plus maps of the entire US. Each template contains a labeled and unlabeled version. Each state is easy to individually color within the HTML.
 ## Full "Maps of the entire US" Recovery
 
 The complete versions of the maps (blank, concealed-carry-sd, labeled) are stored as full SVG HTML files.
