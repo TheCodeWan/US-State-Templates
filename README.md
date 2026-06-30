@@ -1,40 +1,60 @@
 # US-State-Templates
 
-This repository provides ready-to-use maps of the United States in two forms:
+This repository contains a collection of map templates for the United States.
 
-- **Editable HTML templates** (built with SVG) — you can easily recolor individual states by editing simple CSS.
-- **High-resolution PNG images** — ready-to-use pictures for documents, slides, websites, or print.
+The maps come in two forms:
 
-## Converting HTML Templates to PNG Images
+- **HTML files** — These are editable SVG maps. You can open them in a web browser, or edit them with any text editor to change which states are highlighted or what colors they use.
+- **PNG images** — High-resolution versions of the maps that are ready to drop into documents, slides, or websites.
 
-When you customize one of the HTML map files, you need to generate a matching PNG image.
+## Template Example
 
-Here is the process and the reasoning behind each step:
-
-1. **Edit the HTML file**  
-   Change the colors of states by editing the CSS rules inside the `<defs><style>` section of the SVG. The HTML files are designed so that each state has its own class (like `.al`, `.ca`, etc.) that you can target.
-
-2. **Run the generation script**  
-   From the root of the repository, use:
-
-   ```bash
-   python scripts/generate-pngs.py --file "path/to/your-file.html"
-   ```
-
-   **Why we do it this way:**
-
-   - We extract only the `<svg>` content from the HTML file. The surrounding HTML (body styles, centering div, etc.) is only there to make the map look nice when opened directly in a browser. For the final image we only need the vector graphic itself.
-   - We automatically insert a white background rectangle. The raw SVG has no background by default. Adding one ensures the PNG always has a clean, solid white background no matter where it is used.
-   - We render at exactly 4× the size declared in the SVG (`width="1019" height="972"` becomes 4076 × 3888 pixels). This matches the resolution used for all the other maps in the repository and produces crisp results.
-   - We use `rsvg-convert` (from librsvg) because it produces high-quality, accurate rasterizations of the SVG and respects the exact viewBox and dimensions we need.
-
-Here is the basic **labeled template**:
+Here is the basic labeled template:
 
 ![US States Labeled Template](Maps%20of%20the%20entire%20US/templates/labeled/us-states-labeled.png)
 
-Here is the **colored example**:
+## Colored Example
+
+Here is an example of a colored version of the map:
 
 ![US States Colored Example](Maps%20of%20the%20entire%20US/examples/colored/us-states-colored.png)
+
+## How to Generate PNG Images from the HTML Files
+
+When you edit one of the HTML map files (for example, to highlight different states), you will want to create an updated PNG image.
+
+### On a Mac
+
+1. Open the **Terminal** app.  
+   You can do this by pressing `Command + Space`, typing "Terminal", and hitting Enter.
+
+2. Navigate to the folder that contains this repository (this is called the "root" of the repository).
+
+   For example, if you cloned or downloaded the repository to your Desktop and it is named `US-State-Templates`, you would type this and press Enter:
+
+   ```bash
+   cd ~/Desktop/US-State-Templates
+   ```
+
+   (If your folder is in a different location, adjust the path accordingly.)
+
+3. Make sure you have the required tool installed:
+
+   ```bash
+   brew install librsvg
+   ```
+
+4. Run the generation script. Replace the path in the command with the HTML file you edited.
+
+   Example for the labeled template:
+
+   ```bash
+   python scripts/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
+   ```
+
+   The script will create or update the matching PNG file next to the HTML file.
+
+That's all you need to do. The script handles extracting the map and rendering it at high resolution with a clean white background.
 
 ## Repository Structure
 
@@ -55,35 +75,31 @@ Each folder contains a matching pair:
 
 ## Generating PNGs from HTML
 
-For full details and options, see the section above.
-
-Quick commands:
+For reference, here are the most common commands:
 
 ```bash
-# Regenerate all PNGs
+# Generate PNGs for every map
 python scripts/generate-pngs.py
 
-# Regenerate one file
+# Generate PNG for one specific file
 python scripts/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
 
-# Check that PNGs are up to date
+# Check if the PNGs are up to date with the HTML files
 python scripts/generate-pngs.py --check
 ```
 
 ## Contributing
 
-1. Edit the `.html` file you want to change (colors, labels, titles, keys, etc.).
-2. Run the generation script to update the PNG:
-   ```bash
-   python scripts/generate-pngs.py --file "path/to/your-file.html"
-   ```
-3. Commit both the `.html` and the updated `.png`.
+1. Edit the `.html` file.
+2. Run the generation script to update the corresponding `.png`.
+3. Commit both the HTML and PNG.
 4. Open a pull request.
 
-The CI will verify that the PNG matches the HTML.
+A GitHub Action will check that the PNGs are up to date.
 
 ## Notes
 
-- All maps use the same canvas size (`width="1019" height="972"`, `viewBox="-30 -74 1019 972"`).
-- PNGs are always generated at 4× scale for crisp display.
-- The callout lines (pointers for small states like DE, RI, DC) are built into the SVG and will render correctly as long as the CSS rules for `.label` and `.callout-line` exist inside the SVG's `<defs><style>` block.
+- All maps use the same canvas size.
+- PNGs are rendered at 4× resolution (4076 × 3888 pixels) so they look sharp.
+- The callout lines for small states (like DE, RI, and DC) are part of the SVG.
+
