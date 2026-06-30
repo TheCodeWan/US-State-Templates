@@ -42,6 +42,31 @@
             fill: none;
             pointer-events: none;
         }
+</style>
+</head>
+<body>
+    <div id="map">
+<svg xmlns="http://www.w3.org/2000/svg" width="1019" height="972" viewBox="-30 -74 1019 972" preserveAspectRatio="xMidYMid meet">
+  
+<defs>
+<style type="text/css">
+        .state {fill:#FFFFFF; stroke:#000000; stroke-width:1}
+        .borders {stroke:#000000; stroke-width:1}
+        .separator1 {stroke:#B0B0B0; stroke-width:2}
+        .callout-line {
+            stroke: #333333;
+            stroke-width: 0.75;
+            fill: none;
+            pointer-events: none;
+        }
+        .label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            fill: #333333;
+            text-anchor: middle;
+            pointer-events: none;
+        }
 
         .al { fill: #E57373; }
         .ar { fill: #E57373; }
@@ -94,89 +119,11 @@
         .tn { fill: #FFB74D; }
         .vt { fill: #FFB74D; }
         .dc { fill: #E57373; }
+
 </style>
-</head>
-<body>
-    <div id="map">
-<svg xmlns="http://www.w3.org/2000/svg" width="1019" height="972" viewBox="-30 -74 1019 972" preserveAspectRatio="xMidYMid meet">
-  
-<defs>
-<style type="text/css">
-.state {fill:#FFFFFF; stroke:#000000; stroke-width:1}   /* white fill + black outline for full state shapes */
-.borders {stroke:#000000; stroke-width:1}               /* black borders between states */
-
-.separator1 {stroke:#B0B0B0; stroke-width:2}            /* color and width of lines around Alaska and Hawaii */
-
-/* Individual states can be colored as follows:
-.ks,.mt,.pa {fill:#0000FF}
-.ca,.de {fill:#FF0000}
-In this example, Kansas, Montana and Pennsylvania are colored blue, and California and Delaware are colored red.
-Place this code in the empty space below. */
-
-
-
-
-.map-title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    fill: #333333;
-    text-anchor: middle;
-}
-.al { fill: #E57373; }
-.ar { fill: #E57373; }
-.in { fill: #E57373; }
-.nd { fill: #E57373; }
-.ne { fill: #E57373; }
-.nm { fill: #E57373; }
-.or { fill: #E57373; }
-.sc { fill: #E57373; }
-.wi { fill: #E57373; }
-.wv { fill: #E57373; }
-.ak { fill: #81C784; }
-.ca { fill: #81C784; }
-.ga { fill: #81C784; }
-.ia { fill: #81C784; }
-.ky { fill: #81C784; }
-.ma { fill: #81C784; }
-.md { fill: #81C784; }
-.nj { fill: #81C784; }
-.ok { fill: #81C784; }
-.wy { fill: #81C784; }
-.co { fill: #FFF176; }
-.mn { fill: #FFF176; }
-.mo { fill: #FFF176; }
-.mt { fill: #FFF176; }
-.nc { fill: #FFF176; }
-.nh { fill: #FFF176; }
-.nv { fill: #FFF176; }
-.ny { fill: #FFF176; }
-.ri { fill: #FFF176; }
-.tx { fill: #FFF176; }
-.de { fill: #64B5F6; }
-.hi { fill: #64B5F6; }
-.il { fill: #64B5F6; }
-.ks { fill: #64B5F6; }
-.ms { fill: #64B5F6; }
-.oh { fill: #64B5F6; }
-.sd { fill: #64B5F6; }
-.ut { fill: #64B5F6; }
-.va { fill: #64B5F6; }
-.wa { fill: #64B5F6; }
-.az { fill: #FFB74D; }
-.ct { fill: #FFB74D; }
-.fl { fill: #FFB74D; }
-.id { fill: #FFB74D; }
-.la { fill: #FFB74D; }
-.me { fill: #FFB74D; }
-.mi { fill: #FFB74D; }
-.pa { fill: #FFB74D; }
-.tn { fill: #FFB74D; }
-.vt { fill: #FFB74D; }
-.dc { fill: #E57373; }</style>
 </defs>
 
-<!-- Title area (y 0–70): <text class="map-title" x="479.5" y="42">US Five-Coloring Example</text> -->
+<!-- Title area (y 0–70): <text class="map-title" x="479.5" y="42">United States of America</text> -->
 <g id="map-content" transform="translate(0, 105)">
 <g class="state">
 
