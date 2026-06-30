@@ -10,7 +10,7 @@ Each map is designed so that individual states (or groups of states) can be easi
 Maps of the entire US/
 ├── examples/
 │   ├── colored/                    # Example with multiple colors
-│   ├── concealed-carry-sd/         # Concealed carry example
+│   ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
 │   └── state-government-trifectas/ # State government trifectas
 └── templates/
     ├── blank/                      # Blank (unlabeled) template
