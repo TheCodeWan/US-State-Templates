@@ -73,8 +73,6 @@ When you edit one of the HTML map files (for example, to highlight different sta
 
 That's all you need to do. The script handles extracting the map and rendering it at high resolution with a clean white background.
 
-## Generating PNGs from HTML
-
 For reference, here are the most common commands:
 
 ```bash
