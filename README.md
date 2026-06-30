@@ -23,13 +23,13 @@ Here is an example of a colored version of the map:
 
 ```
 Maps of the entire US/
-├── examples/
-│   ├── colored/                    # Example with multiple colors
-│   ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
-│   └── state-government-trifectas/ # State government trifectas
-└── templates/
-    ├── blank/                      # Blank (unlabeled) template
-    └── labeled/                    # Basic labeled template
+├── templates/
+│   ├── blank/                      # Blank (unlabeled) template
+│   └── labeled/                    # Basic labeled template
+└── examples/
+    ├── colored/                    # Example with multiple colors
+    ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
+    └── state-government-trifectas/ # State government trifectas
 ```
 
 Each folder contains a matching pair:
