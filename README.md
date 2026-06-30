@@ -19,6 +19,23 @@ Here is an example of a colored version of the map:
 
 ![US States Colored Example](Maps%20of%20the%20entire%20US/examples/colored/us-states-colored.png)
 
+## Repository Structure
+
+```
+Maps of the entire US/
+├── examples/
+│   ├── colored/                    # Example with multiple colors
+│   ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
+│   └── state-government-trifectas/ # State government trifectas
+└── templates/
+    ├── blank/                      # Blank (unlabeled) template
+    └── labeled/                    # Basic labeled template
+```
+
+Each folder contains a matching pair:
+- `us-states-*.html` — the editable SVG map
+- `us-states-*.png` — the high-resolution (4×) preview image
+
 ## How to Generate PNG Images from the HTML Files
 
 When you edit one of the HTML map files (for example, to highlight different states), you will want to create an updated PNG image.
@@ -55,23 +72,6 @@ When you edit one of the HTML map files (for example, to highlight different sta
    The script will create or update the matching PNG file next to the HTML file.
 
 That's all you need to do. The script handles extracting the map and rendering it at high resolution with a clean white background.
-
-## Repository Structure
-
-```
-Maps of the entire US/
-├── examples/
-│   ├── colored/                    # Example with multiple colors
-│   ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
-│   └── state-government-trifectas/ # State government trifectas
-└── templates/
-    ├── blank/                      # Blank (unlabeled) template
-    └── labeled/                    # Basic labeled template
-```
-
-Each folder contains a matching pair:
-- `us-states-*.html` — the editable SVG map
-- `us-states-*.png` — the high-resolution (4×) preview image
 
 ## Generating PNGs from HTML
 
