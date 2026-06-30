@@ -1,4 +1,0 @@
-Grok MCP push test
-Repo: US-State-Templates
-Date: 2026-06-29
-If you can read this, file push works.
