@@ -49,7 +49,7 @@ When you edit one of the HTML map files (for example, to highlight different sta
    Example for the labeled template:
 
    ```bash
-   python scripts/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
+   python png-generator/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
    ```
 
    The script will create or update the matching PNG file next to the HTML file.
@@ -79,13 +79,13 @@ For reference, here are the most common commands:
 
 ```bash
 # Generate PNGs for every map
-python scripts/generate-pngs.py
+python png-generator/generate-pngs.py
 
 # Generate PNG for one specific file
-python scripts/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
+python png-generator/generate-pngs.py --file "Maps of the entire US/templates/labeled/us-states-labeled.html"
 
 # Check if the PNGs are up to date with the HTML files
-python scripts/generate-pngs.py --check
+python png-generator/generate-pngs.py --check
 ```
 
 ## Contributing

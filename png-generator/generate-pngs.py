@@ -3,9 +3,9 @@
 Generate high-resolution PNGs from the US State map HTML files.
 
 Usage:
-    python scripts/generate-pngs.py                 # regenerate all
-    python scripts/generate-pngs.py --file path/to/file.html
-    python scripts/generate-pngs.py --check         # verify that PNGs match (for CI)
+    python png-generator/generate-pngs.py                 # regenerate all
+    python png-generator/generate-pngs.py --file path/to/file.html
+    python png-generator/generate-pngs.py --check         # verify that PNGs match (for CI)
 
 Requirements:
     - rsvg-convert (librsvg) must be installed:

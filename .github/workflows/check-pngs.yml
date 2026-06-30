@@ -16,4 +16,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
 
       - name: Check that PNGs are up to date
-        run: python scripts/generate-pngs.py --check
+        run: python png-generator/generate-pngs.py --check
