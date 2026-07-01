@@ -4,7 +4,7 @@ This repository contains a collection of map templates for the United States.
 
 The maps come in two forms:
 
-- **HTML files** — These are editable SVG maps. You can open them in a web browser, or edit them with any text editor to change which states are highlighted or what colors they use.
+- **HTML files** — These are interactive editable SVG maps. You can open them in a web browser, or edit them with any text editor to change which states are highlighted or what colors they use.
 - **PNG images** — High-resolution versions of the maps that are ready to drop into documents, slides, or websites.
 
 ## Template Example
