@@ -51,7 +51,7 @@
         g.state circle,
         path.dc,
         circle.dc {
-            transition: stroke-width 0.1s ease;
+            transition: stroke-width 0.1s ease, opacity 0.1s ease;
             cursor: pointer;
         }
         g.state path:hover,
@@ -60,6 +60,9 @@
         circle.dc:hover {
             stroke-width: 2;
             stroke: #000;
+        }
+        .dimmed {
+            opacity: 0.4;
         }
         #tooltip {
             position: absolute;
@@ -432,44 +435,85 @@ Place this code in the empty space below. */
   const svg = document.querySelector('#map svg');
   if (!svg) return;
 
+  const mapContent = document.getElementById('map-content');
+  if (!mapContent) return;
+
+  // Include paths and DC circle for full coverage
   const elements = svg.querySelectorAll('path, circle');
-  elements.forEach(el => {
-    let code = '';
+
+  let activeEl = null;
+
+  function getCode(el) {
     const classes = (el.getAttribute('class') || '').split(/\s+/);
     for (let c of classes) {
       if (c.length === 2 && stateNames[c]) {
-        code = c;
-        break;
+        return c;
       }
     }
-    if (!code) return;
+    return '';
+  }
 
-    function showTooltip(e) {
-      const name = stateNames[code];
-      tooltip.innerHTML = '<strong>' + name + '</strong>';
-      tooltip.style.display = 'block';
+  function showTooltip(e, el, code) {
+    const name = stateNames[code];
+    tooltip.innerHTML = '<strong>' + name + '</strong>';
+    tooltip.style.display = 'block';
+    positionTooltip(e);
+  }
+
+  function positionTooltip(e) {
+    let x = e.pageX + 15;
+    let y = e.pageY + 15;
+    const rect = tooltip.getBoundingClientRect();
+    if (x + rect.width > window.innerWidth + window.scrollX) {
+      x = e.pageX - rect.width - 15;
+    }
+    if (y + rect.height > window.innerHeight + window.scrollY) {
+      y = e.pageY - rect.height - 15;
+    }
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+  }
+
+  function dimOthers(active) {
+    elements.forEach(el => {
+      if (el !== active) {
+        el.classList.add('dimmed');
+      } else {
+        el.classList.remove('dimmed');
+      }
+    });
+  }
+
+  function clearDim() {
+    elements.forEach(el => el.classList.remove('dimmed'));
+  }
+
+  // Event delegation on #map-content to reduce flickering when crossing borders
+  mapContent.addEventListener('mouseover', function(e) {
+    const el = e.target.closest('path, circle');
+    if (!el) return;
+    const code = getCode(el);
+    if (!code) return;
+    if (activeEl === el) return;
+    clearDim();
+    dimOthers(el);
+    activeEl = el;
+    showTooltip(e, el, code);
+  });
+
+  mapContent.addEventListener('mousemove', function(e) {
+    if (activeEl) {
       positionTooltip(e);
     }
+  });
 
-    function positionTooltip(e) {
-      let x = e.pageX + 15;
-      let y = e.pageY + 15;
-      const rect = tooltip.getBoundingClientRect();
-      if (x + rect.width > window.innerWidth + window.scrollX) {
-        x = e.pageX - rect.width - 15;
-      }
-      if (y + rect.height > window.innerHeight + window.scrollY) {
-        y = e.pageY - rect.height - 15;
-      }
-      tooltip.style.left = x + 'px';
-      tooltip.style.top = y + 'px';
-    }
-
-    el.addEventListener('mouseenter', showTooltip);
-    el.addEventListener('mousemove', positionTooltip);
-    el.addEventListener('mouseleave', () => {
+  mapContent.addEventListener('mouseout', function(e) {
+    // Only clear if truly leaving the map content area
+    if (!mapContent.contains(e.relatedTarget)) {
+      clearDim();
       tooltip.style.display = 'none';
-    });
+      activeEl = null;
+    }
   });
 })();
 </script>
