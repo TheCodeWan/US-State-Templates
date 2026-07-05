@@ -36,7 +36,11 @@ MAPS_DIR = ROOT / "Maps of the entire US"
 
 
 def extract_svg(html_path: Path) -> str:
-    """Extract the main <svg> element from an HTML file and ensure white background."""
+    """Extract the main <svg> element from an HTML file and ensure white background.
+    
+    Also merges any <style> blocks from the outer HTML into the SVG's <defs><style>
+    so that things like .legend-swatch borders are preserved when rendering standalone.
+    """
     text = html_path.read_text(encoding="utf-8")
 
     # Grab the first (and only) top-level SVG
@@ -45,6 +49,23 @@ def extract_svg(html_path: Path) -> str:
         raise RuntimeError(f"No <svg> found in {html_path}")
 
     svg = match.group(0)
+
+    # Collect all <style>...</style> content from the full HTML document
+    style_matches = re.findall(r"<style[^>]*>(.*?)</style>", text, re.DOTALL | re.IGNORECASE)
+    outer_css = "\n".join(s.strip() for s in style_matches if s.strip())
+
+    if outer_css:
+        # Find the inner <defs><style type="text/css"> ... </style> and append
+        style_match = re.search(r"(<defs>\s*<style[^>]*>)(.*?)(</style>\s*</defs>)", svg, re.DOTALL | re.IGNORECASE)
+        if style_match:
+            prefix, existing_style, suffix = style_match.groups()
+            # Avoid duplicating if already present (simple check)
+            if ".legend-swatch" not in existing_style and ".legend" not in existing_style:
+                new_style = existing_style.rstrip() + "\n\n/* Injected from outer HTML styles */\n" + outer_css
+                svg = svg[:style_match.start()] + prefix + new_style + suffix + svg[style_match.end():]
+        else:
+            # If no defs/style, create one (rare)
+            svg = re.sub(r"(<svg[^>]*>)", r"\1\n<defs>\n<style type=\"text/css\">\n" + outer_css + "\n</style>\n</defs>", svg, count=1)
 
     # Make sure we have a white background rect right after the opening <svg> tag.
     # This ensures consistent output even if the SVG was edited without the rect.
@@ -69,7 +90,10 @@ def render_png(svg_content: str, output_png: Path) -> None:
             "-o", str(output_png),
         ]
         subprocess.run(cmd, check=True, capture_output=True)
-        print(f"  ✓ Generated {output_png.relative_to(ROOT)}")
+        try:
+            print(f"  ✓ Generated {output_png.relative_to(ROOT)}")
+        except ValueError:
+            print(f"  ✓ Generated {output_png}")
     finally:
         tmp_svg.unlink(missing_ok=True)
 
