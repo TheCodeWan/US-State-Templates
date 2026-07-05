@@ -1,1 +1,1 @@
-This map was inspired by [this YouTube video](https://youtube.com/shorts/6V2K_HCsF00).
+This map was inspired by **[this YouTube video](https://youtube.com/shorts/6V2K_HCsF00)**.
