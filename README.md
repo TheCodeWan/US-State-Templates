@@ -29,7 +29,7 @@ Maps of the entire US/
 └── examples/
     ├── colored/                    # Example with multiple colors
     ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
-    ├── rudest-state/               # The Rudest State map (color key + interactivity)
+    ├── rudest-state/               # Example from a YouTube video
     └── state-government-trifectas/ # State government trifectas
 ```
 
