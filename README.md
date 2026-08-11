@@ -27,6 +27,7 @@ Maps of the entire US/
 │   ├── blank/                      # Blank (unlabeled) template
 │   └── labeled/                    # Basic labeled template
 └── examples/
+    ├── circuit-courts/             # U.S. Courts of Appeals circuits (1st–11th + D.C.)
     ├── colored/                    # Example with multiple colors
     ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
     ├── rudest-state/               # Example from a YouTube video
