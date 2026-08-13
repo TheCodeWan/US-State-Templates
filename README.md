@@ -30,6 +30,7 @@ Maps of the entire US/
     ├── circuit-courts/             # U.S. Courts of Appeals circuits (1st–11th + D.C.)
     ├── colored/                    # Example with multiple colors
     ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
+    ├── gun-ownership/              # Estimated household gun ownership by state
     ├── rudest-state/               # Example from a YouTube video
     └── state-government-trifectas/ # State government trifectas
 ```
