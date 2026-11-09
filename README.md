@@ -32,6 +32,8 @@ Maps of the entire US/
     ├── concealed-carry-sd/         # Example showing South Dakota gun permit reciprocity
     ├── gun-ownership/              # Estimated household gun ownership by state
     ├── rudest-state/               # Example from a YouTube video
+    ├── senate-delegations/        # Senate caucus maps before/after the 2026 midterms
+    ├── senate-delegations/        # Senate caucus maps before/after the 2026 midterms
     └── state-government-trifectas/ # 2026 election results + preserved June 2026 PNG
 ```
 
@@ -40,6 +42,8 @@ Each folder contains a matching pair:
 - `us-states-*.png` — the high-resolution (4×) preview image
 
 The [trifecta example](Maps%20of%20the%20entire%20US/examples/state-government-trifectas/README.md) includes the updated election map, sources, projection notes, and the original June 2026 PNG for comparison. Historical PNGs are snapshots and do not have paired HTML files.
+
+The [Senate delegation maps](Maps%20of%20the%20entire%20US/examples/senate-delegations/README.md) compare the Senate before and after the 2026 midterms, with red/purple stripes for the unresolved Alaska and Mississippi seats.
 
 ## How to Generate PNG Images from the HTML Files
 
