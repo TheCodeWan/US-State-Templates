@@ -39,7 +39,7 @@ Each folder contains a matching pair:
 - `us-states-*.html` — the editable SVG map
 - `us-states-*.png` — the high-resolution (4×) preview image
 
-The [trifecta example](Maps%20of%20the%20entire%20US/examples/state-government-trifectas/README.md) includes the updated election map, sources, unresolved-result notes, and the original June 2026 PNG for comparison. Historical PNGs are snapshots and do not have paired HTML files.
+The [trifecta example](Maps%20of%20the%20entire%20US/examples/state-government-trifectas/README.md) includes the updated election map, sources, projection notes, and the original June 2026 PNG for comparison. Historical PNGs are snapshots and do not have paired HTML files.
 
 ## How to Generate PNG Images from the HTML Files
 
