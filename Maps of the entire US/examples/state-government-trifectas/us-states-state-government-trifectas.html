@@ -82,6 +82,8 @@
 </head>
 <body>
     <div id="map">
+<!-- Sources and classification notes: see README.md in this folder.
+     Election results describe incoming governments, not officeholders currently serving. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1019" height="972" viewBox="-30 -74 1019 972" preserveAspectRatio="xMidYMid meet">
   
 <defs>
@@ -111,52 +113,52 @@ Place this code in the empty space below. */
         .ak { fill: #BA68C8; }
         .al { fill: #EF5350; }
         .ar { fill: #EF5350; }
-        .az { fill: #BA68C8; }
+        .az { fill: #42A5F5; }
         .ca { fill: #42A5F5; }
         .co { fill: #42A5F5; }
         .ct { fill: #42A5F5; }
         .dc { fill: #42A5F5; }
         .de { fill: #42A5F5; }
         .fl { fill: #EF5350; }
-        .ga { fill: #EF5350; }
+        .ga { fill: #BA68C8; }
         .hi { fill: #42A5F5; }
-        .ia { fill: #EF5350; }
+        .ia { fill: #BA68C8; }
         .id { fill: #EF5350; }
         .il { fill: #42A5F5; }
         .in { fill: #EF5350; }
-        .ks { fill: #BA68C8; }
+        .ks { fill: #B0BEC5; }
         .ky { fill: #BA68C8; }
         .la { fill: #EF5350; }
         .ma { fill: #42A5F5; }
         .md { fill: #42A5F5; }
         .me { fill: #42A5F5; }
-        .mi { fill: #BA68C8; }
-        .mn { fill: #BA68C8; }
+        .mi { fill: #42A5F5; }
+        .mn { fill: #42A5F5; }
         .mo { fill: #EF5350; }
         .ms { fill: #EF5350; }
         .mt { fill: #EF5350; }
         .nc { fill: #BA68C8; }
         .nd { fill: #EF5350; }
         .ne { fill: #EF5350; }
-        .nh { fill: #EF5350; }
+        .nh { fill: #BA68C8; }
         .nj { fill: #42A5F5; }
         .nm { fill: #42A5F5; }
-        .nv { fill: #BA68C8; }
+        .nv { fill: #42A5F5; }
         .ny { fill: #42A5F5; }
-        .oh { fill: #EF5350; }
+        .oh { fill: #BA68C8; }
         .ok { fill: #EF5350; }
         .or { fill: #42A5F5; }
-        .pa { fill: #BA68C8; }
+        .pa { fill: #42A5F5; }
         .ri { fill: #42A5F5; }
         .sc { fill: #EF5350; }
         .sd { fill: #EF5350; }
         .tn { fill: #EF5350; }
-        .tx { fill: #EF5350; }
+        .tx { fill: #BA68C8; }
         .ut { fill: #EF5350; }
         .va { fill: #42A5F5; }
         .vt { fill: #BA68C8; }
         .wa { fill: #42A5F5; }
-        .wi { fill: #BA68C8; }
+        .wi { fill: #42A5F5; }
         .wv { fill: #EF5350; }
         .wy { fill: #EF5350; }
 
@@ -198,7 +200,8 @@ Place this code in the empty space below. */
 
 
 
-<text class="map-title" x="479.5" y="58">U.S. State Government Trifectas (June 2026)</text>
+<text class="map-title" x="479.5" y="58">U.S. State Government Trifectas</text>
+<text class="legend-text" x="479.5" y="84" text-anchor="middle">2026 election results · Incoming governments · As of Nov. 9, 2026</text>
 <g id="map-content" transform="translate(0, 105)">
 <g class="state">
 
@@ -534,16 +537,17 @@ Place this code in the empty space below. */
 </g>
 <g id="legend">
   <line x1="40" y1="760" x2="919" y2="760" stroke="#B0B0B0" stroke-width="1"></line>
-  <text class="legend-title" x="479.5" y="782" text-anchor="middle">Key</text>
-
-  <rect class="legend-swatch" x="120" y="798" width="28" height="18" fill="#EF5350"></rect>
-  <text class="legend-text" x="156" y="810" dy="0.35em">Republican Trifecta (fully controlled)</text>
-
-  <rect class="legend-swatch" x="400" y="798" width="28" height="18" fill="#42A5F5"></rect>
-  <text class="legend-text" x="436" y="810" dy="0.35em">Democratic Trifecta (fully controlled)</text>
-
-  <rect class="legend-swatch" x="680" y="798" width="28" height="18" fill="#BA68C8"></rect>
-  <text class="legend-text" x="716" y="810" dy="0.35em">Split / No Trifecta</text>
+  <text class="legend-title" x="479.5" y="782" text-anchor="middle">Key — 50 states</text>
+  <rect class="legend-swatch" x="60" y="798" width="28" height="18" fill="#EF5350"></rect>
+  <text class="legend-text" x="96" y="810" dy="0.35em">Republican trifecta (18)</text>
+  <rect class="legend-swatch" x="300" y="798" width="28" height="18" fill="#42A5F5"></rect>
+  <text class="legend-text" x="336" y="810" dy="0.35em">Democratic trifecta (22)</text>
+  <rect class="legend-swatch" x="540" y="798" width="28" height="18" fill="#BA68C8"></rect>
+  <text class="legend-text" x="576" y="810" dy="0.35em">Split / Coalition (9)</text>
+  <rect class="legend-swatch" x="760" y="798" width="28" height="18" fill="#B0BEC5"></rect>
+  <text class="legend-text" x="796" y="810" dy="0.35em">Pending (1)</text>
+  <text class="legend-text" x="479.5" y="844" text-anchor="middle">Alaska: bipartisan legislative coalitions. Kansas: governor race pending.</text>
+  <text class="legend-text" x="479.5" y="862" text-anchor="middle">D.C.: blue denotes Democratic local control; excluded from state totals. Results unofficial.</text>
 </g>
 </svg>
     </div>
@@ -570,9 +574,11 @@ Place this code in the empty space below. */
     '#ef5350': 'Republican Trifecta',
     '#42a5f5': 'Democratic Trifecta',
     '#ba68c8': 'Split / No Trifecta',
+    '#b0bec5': 'Pending',
     'rgb(239, 83, 80)': 'Republican Trifecta',
     'rgb(66, 165, 245)': 'Democratic Trifecta',
-    'rgb(186, 104, 200)': 'Split / No Trifecta'
+    'rgb(186, 104, 200)': 'Split / No Trifecta',
+    'rgb(176, 190, 197)': 'Pending'
   };
 
   const tooltip = document.getElementById('tooltip');
@@ -601,7 +607,10 @@ Place this code in the empty space below. */
 
   function showTooltip(e, el, code) {
     const fill = window.getComputedStyle(el).fill.toLowerCase().trim();
-    const status = colorToStatus[fill] || 'Unknown';
+    const status = code === 'ak' ? 'No partisan trifecta (bipartisan legislative coalitions)'
+      : code === 'ks' ? 'Pending — governor race unresolved'
+      : code === 'dc' ? 'Democratic local control (not a state; excluded from totals)'
+      : colorToStatus[fill] || 'Unknown';
     const name = stateNames[code];
     tooltip.innerHTML = '<strong>' + name + '</strong><br>' + status;
     tooltip.style.display = 'block';
